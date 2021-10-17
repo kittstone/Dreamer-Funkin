@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dreams.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dreams0000" x="10" y="10" width="674" height="618" frameX="-6" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0001" x="10" y="10" width="674" height="618" frameX="-6" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0002" x="10" y="10" width="674" height="618" frameX="-6" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0003" x="714" y="10" width="674" height="618" frameX="-6" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0004" x="1418" y="10" width="673" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0005" x="1418" y="10" width="673" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0006" x="1418" y="10" width="673" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0007" x="1418" y="10" width="673" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0008" x="2121" y="10" width="677" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0009" x="2828" y="10" width="677" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0010" x="10" y="658" width="677" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+	<SubTexture name="dreams0011" x="717" y="658" width="677" height="618" frameX="0" frameY="0" frameWidth="680" frameHeight="618"/>
+</TextureAtlas>

@@ -42,7 +42,7 @@ class MainMenuState extends MusicBeatState
 		FlxG.mouse.visible = true;
 
 		// warning: coding is gonna be shit from now on lol
-		background = new FlxSprite().loadGraphic(Paths.image(meunPath + 'backgrounds'));
+		background = new FlxSprite().loadGraphic(Paths.image(menuPath + 'backgrounds'));
 		background.screenCenter();
 		background.scrollFactor.set();
 		background.antialiasing = true;

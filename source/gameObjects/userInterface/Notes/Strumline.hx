@@ -9,6 +9,7 @@ import flixel.math.FlxMath;
 import flixel.math.FlxRect;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import meta.data.Conductor;
 import meta.data.Timings;
@@ -123,7 +124,7 @@ class UIStaticArrow extends FlxSprite
 
 class Strumline extends FlxTypedGroup<FlxBasic>
 {
-	//
+	public var laneunderlay:FlxSprite;
 	public var receptors:FlxTypedGroup<UIStaticArrow>;
 	public var splashNotes:FlxTypedGroup<NoteSplash>;
 	public var notesGroup:FlxTypedGroup<Note>;
@@ -146,6 +147,18 @@ class Strumline extends FlxTypedGroup<FlxBasic>
 		this.character = character;
 		this.playState = playState;
 		this.displayJudgements = displayJudgements;
+
+		laneunderlay = new FlxSprite(0, 0).makeGraphic(110 * 4 + 50, FlxG.height * 2);
+		if (Init.trueSettings.get('Note Underlay') == 'half')
+		{
+			laneunderlay.alpha = 0.5;
+		}
+		if (Init.trueSettings.get('Note Underlay') == 'on')
+		{
+			laneunderlay.alpha = 1;
+		}
+		laneunderlay.color = FlxColor.BLACK;
+		laneunderlay.scrollFactor.set();
 
 		for (i in 0...keyAmount)
 		{
@@ -171,6 +184,13 @@ class Strumline extends FlxTypedGroup<FlxBasic>
 			}
 		}
 
+		laneunderlay.x = receptors.members[0].x + 5;
+		laneunderlay.screenCenter(Y);
+
+		if (Init.trueSettings.get('Note Underlay') != 'off')
+		{
+			add(laneunderlay);
+		}
 		add(receptors);
 		add(notesGroup);
 		if (splashNotes != null)

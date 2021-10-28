@@ -42,41 +42,47 @@ class MainMenuState extends MusicBeatState
 		FlxG.mouse.visible = true;
 
 		// warning: coding is gonna be shit from now on lol
-		background = new FlxSprite().loadGraphic(Paths.image(menuPath + 'background'));
-		background.screenCenter();
+		background = new FlxSprite(-500, 200).loadGraphic(Paths.image(menuPath + 'background'));
 		background.scrollFactor.set();
 		background.antialiasing = true;
+		background.setGraphicSize(Std.int(background.width * 2));
 		add(background);
 
-		storymode = new FlxSprite(358, 342);
+		storymode = new FlxSprite(228 - 250, 342 - 250);
 		storymode.frames = Paths.getSparrowAtlas(menuPath + 'dreams');
 		storymode.scrollFactor.set();
 		storymode.antialiasing = true;
 		add(storymode);
 
-		freeplay = new FlxSprite(898, 383);
+		freeplay = new FlxSprite(998 - 250, 383 - 250);
 		freeplay.frames = Paths.getSparrowAtlas(menuPath + 'freeplay');
 		freeplay.scrollFactor.set();
 		freeplay.antialiasing = true;
 		add(freeplay);
 
-		settings = new FlxSprite(1154, 93).loadGraphic(Paths.image(menuPath + 'settings'));
+		settings = new FlxSprite(1354 - 250, 25).loadGraphic(Paths.image(menuPath + 'settings'));
 		settings.scrollFactor.set();
 		settings.antialiasing = true;
 		add(settings);
 	}
 	override function update(elapsed:Float)
 	{
-		if (FlxG.mouse.overlaps(storymode))
+		if (FlxG.mouse.overlaps(storymode) && FlxG.mouse.justPressed)
 		{
+			FlxG.mouse.useSystemCursor = false;
+			FlxG.mouse.visible = false;
 			Main.switchState(this, new StoryMenuState());
 		}
-		if (FlxG.mouse.overlaps(freeplay))
+		if (FlxG.mouse.overlaps(freeplay) && FlxG.mouse.justPressed)
 		{
+			FlxG.mouse.useSystemCursor = false;
+			FlxG.mouse.visible = false;
 			Main.switchState(this, new FreeplayState());
 		}
-		if (FlxG.mouse.overlaps(settings))
+		if (FlxG.mouse.overlaps(settings) && FlxG.mouse.justPressed)
 		{
+			FlxG.mouse.useSystemCursor = false;
+			FlxG.mouse.visible = false;
 			Main.switchState(this, new OptionsMenuState());
 		}
 	}

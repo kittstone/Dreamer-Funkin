@@ -500,7 +500,7 @@ class PlayState extends MusicBeatState
 							getCenterX = char.getMidpoint().x - 100;
 					}
 
-					camFollow.setPosition(getCenterX + (camDisplaceX * 8), getCenterY);
+					camFollow.setPosition(getCenterX + (camDisplaceX * 8), getCenterY + (camDisplaceY * 8));
 
 					if (char.curCharacter == 'mom')
 						vocals.volume = 1;
@@ -532,7 +532,7 @@ class PlayState extends MusicBeatState
 							getCenterY = char.getMidpoint().y - 200;
 					}
 
-					camFollow.setPosition(getCenterX + (camDisplaceX * 8), getCenterY);
+					camFollow.setPosition(getCenterX + (camDisplaceX * 8), getCenterY + (camDisplaceY * 8));
 
 					/*
 						if (SONG.song.toLowerCase() == 'tutorial')
@@ -1018,8 +1018,8 @@ class PlayState extends MusicBeatState
 	{
 		if (!Init.trueSettings.get('No Camera Note Movement'))
 		{
-			var camDisplaceExtend:Float = 1.5;
-			var camDisplaceSpeed = 0.0125;
+			var camDisplaceExtend:Float = 2.5;
+			var camDisplaceSpeed = 0.3;
 			if (PlayState.SONG.notes[Std.int(curStep / 16)] != null)
 			{
 				if ((PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && mustHit)
@@ -1029,6 +1029,14 @@ class PlayState extends MusicBeatState
 						camDisplaceX -= camDisplaceSpeed;
 					else if ((cStrum.members[3].animation.curAnim.name == 'confirm') && (camDisplaceX < camDisplaceExtend))
 						camDisplaceX += camDisplaceSpeed;
+				}
+				if ((PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && mustHit)
+					|| (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && !mustHit))
+				{
+					if ((cStrum.members[2].animation.curAnim.name == 'confirm') && (camDisplaceY > -camDisplaceExtend))
+						camDisplaceY -= camDisplaceSpeed;
+					else if ((cStrum.members[1].animation.curAnim.name == 'confirm') && (camDisplaceY < camDisplaceExtend))
+						camDisplaceY += camDisplaceSpeed;
 				}
 			}
 		}

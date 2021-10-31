@@ -145,6 +145,21 @@ class Character extends FNFSprite
 				setGraphicSize(Std.int(width * 0.6));
 				y -= 275;
 				x += 0;
+
+			case 'kittokay':
+				tex = Paths.getSparrowAtlas('characters/kittokay');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+
+				playAnim('idle');
+
+				setGraphicSize(Std.int(width * 0.6));
+				y -= 275;
+				x += 0;
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
